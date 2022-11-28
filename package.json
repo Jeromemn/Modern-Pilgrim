@@ -1,4 +1,8 @@
 {
+
+  "dependencies": {
+    "@auth0/auth0-react": "^1.12.0"
+}
   "name": "mern-shopping",
   "version": "1.0.0",
   "description": "",
