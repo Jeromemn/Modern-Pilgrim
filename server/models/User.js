@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
-const Post = require('../models/Post');
+const Post = require("../models/Post");
 
 const userSchema = new Schema({
   username: {
@@ -17,7 +17,13 @@ const userSchema = new Schema({
   bio: {
     type: String,
   },
-  posts: [Post],
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post",
+      required: true,
+    },
+  ],
 });
 
 const User = mongoose.model("User", userSchema);

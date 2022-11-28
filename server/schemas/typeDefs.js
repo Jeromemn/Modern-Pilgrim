@@ -31,7 +31,7 @@ const typeDefs = gql`
       username: String!
       email: String!
       bio: String!
-    ): User
+    ): Auth
     addPost(
       user: User!
       summary: String!
