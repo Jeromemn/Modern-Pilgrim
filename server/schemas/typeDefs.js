@@ -23,7 +23,7 @@ const typeDefs = gql`
   type Query {
     posts: [Post]
     comments: [Comment]
-    user: User
+    user(_id: ID): User
     searchPost(value: String): [Post]
   }
   type Mutation {
@@ -31,7 +31,7 @@ const typeDefs = gql`
       username: String!
       email: String!
       bio: String!
-    ): Auth
+    ): User
     addPost(
       user: User!
       summary: String!
@@ -43,11 +43,11 @@ const typeDefs = gql`
       post: Post!
       textField: String!
     ): Comment
-    updateUser(
-      username: String
-      email: String
-      bio: String
-    ): User
+    # updateUser(
+    #   username: String
+    #   email: String
+    #   bio: String
+    # ): User
   }
 `;
 
