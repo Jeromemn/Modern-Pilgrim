@@ -1,8 +1,6 @@
-
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 const Comment = require("../models/Comment");
-const Post = require('../models/Post');
-
+const Post = require("../models/Post");
 
 const commentSchema = new Schema({
   comment: [
@@ -14,17 +12,14 @@ const commentSchema = new Schema({
         maxlength: 280,
       },
       commentUser: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "User",
         required: true,
       },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-        },
-    }],
+    },
+  ],
 });
 
-const Comment = model('Comment', commentSchema);
+const Comment = model("Comment", commentSchema);
 
 module.exports = Comment;
