@@ -17,6 +17,7 @@ const userSchema = new Schema({
   bio: {
     type: String,
   },
+  posts: [Post],
 });
 
 const User = mongoose.model("User", userSchema);
