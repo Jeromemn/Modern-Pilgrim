@@ -5,25 +5,34 @@ export default function NavTabs() {
     <>
       <ul>
         <li>
-          <Link to="/myProfile/"> ${Auth.getProfile().data.username} </Link>
+          <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link>
           My Profile
         </li>
 
         {/* // href='#My-profile' onClick={() => handlePageChange('MyProfile')} */}
 
-        <li href="#Submit" onClick={() => handlePageChange("MyProfile")}>
+        <li>
+            <Link to='/Review'></Link>
+         {/* href="#Submit" onClick={() => handlePageChange("MyProfile")}> */}
           Submit a Voyage
         </li>
 
-        <li href="#Explore" onClick={() => handlePageChange("Explore")}>
+        <li>
+        <Link to='/'></Link>
+        {/* // href="#Explore" onClick={() => handlePageChange("Explore")}> */}
           Explore
         </li>
 
-        <li href="#Login" onClick={() => handlePageChange("Login")}>
+        <li>
+            <Link to='/login'></Link>
+        {/* // href="#Login" onClick={() => handlePageChange("Login")}> */}
           Sign in
         </li>
 
-        <li href="#Join" onClick={() => handlePageChange("Join")}>
+        <li>
+            <Link to='/signup'></Link>
+        
+        {/* href="#Join" onClick={() => handlePageChange("Join")}> */}
           Sign up
         </li>
       </ul>
