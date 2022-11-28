@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
-const Post = require("./Post");
+const { Schema, model } = mongoose;
+const Post = require('../models/Post');
 
 const userSchema = new Schema({
   username: {
@@ -17,7 +17,7 @@ const userSchema = new Schema({
   bio: {
     type: String,
   },
-  posts: [Post],
+  posts: [${Post}],
 });
 
 const User = mongoose.model("User", userSchema);
