@@ -1,18 +1,40 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function NavTabs() {
   return (
     <>
       <ul>
-        <li href='#My-profile' onClick={() => handlePageChange('MyProfile')}>My Profile</li>
+        <li>
+          <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link>
+          My Profile
+        </li>
 
-        <li href='#Submit' onClick={() => handlePageChange('MyProfile')}>Submit a Voyage</li>
+        {/* // href='#My-profile' onClick={() => handlePageChange('MyProfile')} */}
 
-        <li href='#Explore' onClick={() => handlePageChange('Explore')} >Explore</li>
+        <li>
+            <Link to='/Review'></Link>
+         {/* href="#Submit" onClick={() => handlePageChange("MyProfile")}> */}
+          Submit a Voyage
+        </li>
 
-        <li href='#Login' onClick={() => handlePageChange('Login')}>Sign in</li>
+        <li>
+        <Link to='/'></Link>
+        {/* // href="#Explore" onClick={() => handlePageChange("Explore")}> */}
+          Explore
+        </li>
 
-        <li href='#Join' onClick={() => handlePageChange('Join')}>Sign up</li>
+        <li>
+            <Link to='/login'></Link>
+        {/* // href="#Login" onClick={() => handlePageChange("Login")}> */}
+          Sign in
+        </li>
+
+        <li>
+            <Link to='/signup'></Link>
+        
+        {/* href="#Join" onClick={() => handlePageChange("Join")}> */}
+          Sign up
+        </li>
       </ul>
     </>
   );
