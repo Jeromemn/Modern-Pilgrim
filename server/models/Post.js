@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const postSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   summary: {
     type: String,
     required: true,
@@ -12,18 +16,17 @@ const postSchema = new Schema({
     required: true,
   },
   price: {
-    type: Float,
+    type: mongoose.Decimal128,
     required: true,
   },
   rating: {
-    type: Int,
+    type: Number,
     required: true,
   },
   comments: [
     {
       type: Schema.Types.ObjectId,
       ref: "Comment",
-      required: true,
     },
   ],
 });
