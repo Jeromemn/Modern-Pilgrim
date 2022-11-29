@@ -5,13 +5,11 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Review from "./pages/ReviewPage";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-
-
-// add in auth middleware for auth system we set up 
+// add in auth middleware for auth system we set up
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -35,10 +33,9 @@ function App() {
 
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/profiles/:username" element={<Profile/>} />
+          <Route path="/profiles/:username" element={<Profile />} />
 
-          <Route path="/trips/:tripid" element={<Trip/>} />
-
+          <Route path="/trips/:tripid" element={<Trip />} />
         </Routes>
         <div>
           <Footer />
