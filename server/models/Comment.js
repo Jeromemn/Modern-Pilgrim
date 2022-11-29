@@ -1,10 +1,8 @@
 const { Schema, model } = require("mongoose");
 const Comment = require("../models/Comment");
-const Post = require("../models/Post");
 
 const commentSchema = new Schema({
-  comment: [
-    {
+  
       commentText: {
         type: String,
         required: true,
@@ -17,8 +15,7 @@ const commentSchema = new Schema({
         required: true,
       },
     },
-  ],
-});
+);
 
 const Comment = model("Comment", commentSchema);
 

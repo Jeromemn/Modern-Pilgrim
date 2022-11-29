@@ -17,7 +17,10 @@ const typeDefs = gql`
     rating: Int
     comments: [Comment]
   }
+
   type Comment {
+    commentText: String
+    commentUser: User
 
   }
   type Query {
