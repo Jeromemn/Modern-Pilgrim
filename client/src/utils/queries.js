@@ -68,3 +68,28 @@ query me {
         }
     }
 }`;
+
+export const TRIP_SEARCH_QUERY = gql`
+query tripSearchQuery($filter: String!)  {
+    feed(filter: $filter) {
+    _id
+    trips {
+        _id
+        tripText
+        tripLocation
+        tripPrice
+        tripRating
+        createdAt
+        tripAuthor {
+        id
+        username
+        }
+        comments {
+            _id
+            commentText
+            createdAt
+        }
+    }
+    }
+}
+`;
