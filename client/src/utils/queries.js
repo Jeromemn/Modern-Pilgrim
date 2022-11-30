@@ -68,3 +68,45 @@ query me {
         }
     }
 }`;
+
+export const QUERY_SINGLE_PROFILE = gql`
+query singleProfile($profileID: ID!) {
+    profile(profileId: $profileID) {
+        _id
+        username
+        trips {
+            _id
+            tripText
+            tripLocation
+            tripPrice
+            tripRating
+            tripAuthor
+            createdAt
+        }
+    }
+}`
+
+export const TRIP_SEARCH_QUERY = gql`
+query tripSearch($filter: String!)  {
+    feed(filter: $filter) {
+    _id
+    trips {
+        _id
+        tripText
+        tripLocation
+        tripPrice
+        tripRating
+        createdAt
+        tripAuthor {
+        id
+        username
+        }
+        comments {
+            _id
+            commentText
+            createdAt
+        }
+    }
+    }
+}
+`;
