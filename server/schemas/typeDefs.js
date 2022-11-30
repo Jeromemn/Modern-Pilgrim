@@ -17,6 +17,7 @@ const typeDefs = gql`
     rating: Int
     comments: [Comment]
   }
+
   type Comment {
     _id: ID
     commentText: String
