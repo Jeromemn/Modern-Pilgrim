@@ -3,9 +3,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Review from "./pages/ReviewPage";
+import Review from "./pages/Tripreview";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login"
+import Logout from "./pages/Logout"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route path="/signup" element={<Signup />} />
+          <Route path="/logout" element={<Logout />} />
 
           <Route path="/profiles/:username" element={<Profile/>} />
 
