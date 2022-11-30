@@ -11,11 +11,7 @@
 
 ## Description:
 
-<br>
-
-```md
 This app is used as social media platform. At Modern Pilgrims we like to share with you other peoples recent trips and a little bit about how it went. For instance, in each post you can determine whether or not you rate the trip out of five stars. As well as leave a summary of the trip, location of the trip, and even comment on your trip or others that you find comment worthy.
-```
 
 <br>
 
@@ -43,9 +39,7 @@ This app is used as social media platform. At Modern Pilgrims we like to share w
 
 ## Usage:
 
-```md
 We used Mongoose, Express, Node.js, React.js, graphql, react-router-dom
-```
 
 <br>
 
@@ -56,8 +50,6 @@ We used Mongoose, Express, Node.js, React.js, graphql, react-router-dom
 
 ## Contributing:
 
-```md
 Please either email or connect on Github with the authors of this repo to futher connect and assist with contributions.
-```
 
 <br>
