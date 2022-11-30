@@ -8,7 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Profile = () => {
 const { profileId } = useParams();
 const { user, isAuthenticated, isLoading } = useAuth0();
-const { loading, data } = useQuery(
+const { data } = useQuery(
     profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
     {
         variables: { profileId: profileId },
