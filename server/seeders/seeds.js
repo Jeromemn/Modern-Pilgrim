@@ -1,4 +1,4 @@
-const db = require("./connection");
+const db = require("../config/connection");
 const { User, Post, Comment } = require("../models");
 
 db.once("open", async () => {
@@ -18,7 +18,7 @@ db.once("open", async () => {
   const posts = await Post.insertMany([
     {
       user: "63866715a7f9cb9e7bba13be",
-      location: "Tin of Cookies",
+      location: "Tin of  Cookies",
       summary:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       price: 2.99,

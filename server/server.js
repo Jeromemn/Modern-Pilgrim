@@ -11,6 +11,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  mock: true,
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -43,4 +44,4 @@ const startApolloServer = async () => {
 };
 
 // Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+startApolloServer();

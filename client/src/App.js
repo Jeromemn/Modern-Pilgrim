@@ -10,9 +10,7 @@ import Logout from "./pages/Logout"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-
-
-// add in auth middleware for auth system we set up 
+// add in auth middleware for auth system we set up
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -37,10 +35,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />} />
 
-          <Route path="/profiles/:username" element={<Profile/>} />
+          <Route path="/profiles/:username" element={<Profile />} />
 
-          <Route path="/trips/:tripid" element={<Trip/>} />
-
+          <Route path="/trips/:tripid" element={<Trip />} />
         </Routes>
         <div>
           <Footer />

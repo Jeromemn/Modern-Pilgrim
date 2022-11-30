@@ -17,9 +17,11 @@ const typeDefs = gql`
     rating: Int
     comments: [Comment]
   }
+
   type Comment {
+    _id: ID
     commentText: String
-    commentUser: User
+    commentUser: String
   }
   type Query {
     getPosts: [Post]
@@ -27,33 +29,22 @@ const typeDefs = gql`
     getComments: [Comment]
     getUser(_id: ID): User
     searchPost(value: String): [Post]
-    getPrices(search: Float): Post.price
-    getRating(search: Int): Post.rating
+    getPrices(search: Float): Post
+    getRating(search: Int): Post
   }
   type Mutation {
-    addUser(
-      username: String!
-      email: String!
-      bio: String!
-    ): Auth
+    addUser(username: String!, email: String!, bio: String): User
     addPost(
-      user: User!
+      user: ID
       summary: String!
       location: String!
       price: Float!
       rating: Int!
     ): Post
-    addComment(
-      post: Post!
-      textField: String!
-    ): Comment
-    updateUser(
-      username: String
-      email: String
-      bio: String
-    ): User
+    addComment(commentUser: String, commentText: String!): Comment
+    updateUser(username: String, email: String, bio: String): User
     updatePost(
-      user: User!
+      user: ID
       summary: String!
       location: String!
       price: Float!
