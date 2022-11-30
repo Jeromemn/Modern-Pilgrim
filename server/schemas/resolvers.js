@@ -2,12 +2,14 @@ const { User, Post, Comment } = require("../models");
 
 const resolvers = {
   Query: {
+    // working
     getPosts: async () => {
       return await Post.find();
     },
     getPost: async (parent, { _id }) => {
       return await Post.findById(_id);
     },
+    // working
     getComments: async () => {
       return await Comment.find();
     },
