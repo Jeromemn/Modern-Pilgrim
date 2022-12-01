@@ -5,7 +5,12 @@ import styled from "styled-components";
 
 const DropDownContainer = styled.div`
   display: flex;
+  justify-self: center;
+  align-self: center;
+  border-radius: 12px;
   position: relative;
+  height: 3rem;
+
 `;
 
 const DropdownList = styled.ul`

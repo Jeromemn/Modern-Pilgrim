@@ -34,6 +34,16 @@ const FilterContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+height: 3rem;
+`;
+
+const TripsContainer = styled.div`
+display: flex;
+align-content: center;
+justify-content: space-between;
+padding: 5rem;
+list-style-type: none;
+
 `;
 
 
@@ -89,12 +99,12 @@ const useTripsSearchFilter = () => {
       />
       {/* <Filters /> */}
       </FilterContainer>
-      <div>
+      <TripsContainer>
         {/* maybe {[].map */}
       {trips.trip.map((trip, i) => (
         <ListItem trip={trip} key={i}/>
         ))}
-        </div>
+        </TripsContainer>
 
     </div>
   )

@@ -3,6 +3,7 @@
 // import { useLazyQuery, gql } from '@apollo/client';
 import styled from 'styled-components';
 import { Button } from './SearchButton';
+import Flightbtn from '../../assets/Flightbtn.svg'
 
 
 // for search feature to find match even partial 
@@ -13,21 +14,24 @@ display: flex;
 justify-content: center;
 align-items: center;
 align-content: center;
-background-color: blue;
+background-color: #E8F1F2;
 /* line-height: 1; */
 border-radius: 12px;
+position: relative;
 `;
 
 const SearchBar = styled.input`
-background-color: blue;
+background-color: #E8F1F2;
 position: relative;
-height: 5rem;
-font-size: 30px;
-width: fit-content;
+height: 3rem;
+font-size: 20px;
+width: 20rem;
 border: none;
+padding-right: 1rem;
+margin-right: 1rem;
 
 /* border-radius: ; */
-padding-right: 10px;
+padding-left: .5rem;
 
 ::placeholder {
   color: black;
@@ -45,9 +49,7 @@ const Search = ({ value, onChange, onSubmit }) => {
       <SearchContainer>
         
         <SearchBar type="text" placeholder='Where would you like to go?' onChange={onChange} value={value} />
-        <Button onClick={onSubmit}> <span class="material-symbols-outlined md-48">
-flight_takeoff
-</span> </Button>
+        <Button onClick={onSubmit}>  </Button>
       </SearchContainer>
       {/* 
         {data && 
