@@ -175,8 +175,8 @@ const useTripsSearchFilter = () => {
       <Filters />
       <div>
         {/* maybe {[].map */}
-      {trips.trip.map((trip) => (
-        <ListItem trip={trip} />
+      {trips.trip.map((trip, i) => (
+        <ListItem trip={trip} key={i}/>
         ))}
         </div>
 

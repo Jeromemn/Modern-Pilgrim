@@ -27,17 +27,17 @@ z-index: -1;
 
 `;
 
-const Video = styled.video`
-position: absolute;
-display: block;
-top: 0;
-/* margin-top: 5rem; */
-left: 0;
-object-fit: cover;
-height: 100%;
-width: 100%;
-z-index: -1;
-`;
+// const Video = styled.video`
+// position: absolute;
+// display: block;
+// top: 0;
+// /* margin-top: 5rem; */
+// left: 0;
+// object-fit: cover;
+// height: 100%;
+// width: 100%;
+// z-index: -1;
+// `;
 
 const Header1 = styled.h1`
 font-size: 3rem;
@@ -48,6 +48,7 @@ justify-self: flex-start;
 /* left: 0; */
 padding-left: 1rem;
 margin: 0 0;
+position: absolute;
 
 `;
 
@@ -65,10 +66,10 @@ const cld = new Cloudinary({
 
   }
 });
+const headerImage = cld.video('headerEdit')
+console.log(headerImage);
 
 export default function HeaderContainer() {
-  const headerImage = cld.video('headerEdit')
-  console.log(headerImage);
   return (
     <>
       <Header>

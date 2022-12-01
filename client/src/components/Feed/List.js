@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom'
 
 // Single List Item
-const ListItem = ({ trip }) => (
-  <li key={trip.id}>
+const ListItem = ({ trip, i }) => (
+  <li key={i}>
     <div>
       <h3>
         {" "}
         {trip.location}
-        <Link to={`/trips/${trip._id}`}> {trip.location}</Link>
+        <Link to={`/trips/${trip, i}`}> {trip.location}</Link>
       </h3>
       <h4> {trip.country} </h4>
       <p> {trip.price} </p>
