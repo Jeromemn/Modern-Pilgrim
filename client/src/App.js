@@ -1,13 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-import Home from "./pages/Home";
-// import Profile from "./pages/Profile";
-import Review from "./pages/TripReview";
-import Signup from "./pages/SignUp";
-import Login from "./pages/Login"
+import Home from "./pages/home";
+import Profile from "./pages/Profile";
+import Review from "./pages/tripReview";
 import Trip from "./pages/Trip"
-import Logout from './pages/Logout'
 import Header from "./components/Header/SecondHeader";
 import HomeHeader from "./components/HomeHeader/HomeHeader"
 import Footer from "./components/Footer/Footer";
@@ -36,13 +33,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
 
-          {/* <Route path="/myProfile" element={<Profile />} /> */}
+          <Route path="/myProfile" element={<Profile />} />
           <Route path="/Review" element={<Review />} />
-
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-
-          <Route path="/signup" element={<Signup />} />
 
           {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
 
