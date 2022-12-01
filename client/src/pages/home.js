@@ -6,6 +6,7 @@ import FeedCont from "../components/Feed/index.js";
 // import Search from "../components/Feed/Search";
 import styled from "styled-components";
 // import Filters from "../components/Feed/Filter.js";
+import Navbar from "../components/Navigation/Navbar";
 
 const SearchContainer = styled.div`
 display: flex;
@@ -21,7 +22,7 @@ function Home() {
       <SearchContainer>
         {/* <Search /> */}
       </SearchContainer>
-
+< Navbar />
       <div>
         {/* <CardContainer> */}
 
