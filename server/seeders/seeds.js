@@ -22,6 +22,7 @@ db.once("open", async () => {
       summary:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       price: 2.99,
+      image: 'kbg5jiqm4cyxlindd9to',
       rating: 8,
       comments: [comments[0]._id, comments[1]._id],
     },

@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import styled from "styled-components";
 import { useState } from "react";
-
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedVideo } from '@cloudinary/react';
 import madrid from '../../assets/madrid.jpg'
 
 const TripBox = styled.li`
@@ -12,7 +13,7 @@ width: 15rem;
 display: grid;
 grid-template-rows: 2rem 1fr 2rem ;
 grid-template-columns: 1rem 1fr 1rem;
-background-image: url(${madrid});
+background-image: url({trip.image});
 background-image: cover;
 background-size:25rem;
 /* background-clip: border-box; */
@@ -75,6 +76,17 @@ color: white;
 
 `;
 
+// const cld = new Cloudinary({
+//   cloud: {
+//     cloudName: 'ddhobdqkx',
+//     apiKey: '232238398692322',
+//     apiSecret: 'oRkkZ-sLOzBKtfHp_ph0SEEhhEI',
+
+//   }
+// })
+
+// const tripImage = cld.image()
+
 export default function ListItem({ trip, i}) {
 
 const [isHovering, setIsHovering] = useState(false);
@@ -94,7 +106,7 @@ const handleMouseOut = () => {
 return (
   <TripBox key={i} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
     {/* <div> */}
-      <CardHeader>
+      <CardHeader >
         {" "}
         {/* {trip.location} */}
         <LinkStyle to={`/trips/${trip}`} > {trip.location}  </LinkStyle>

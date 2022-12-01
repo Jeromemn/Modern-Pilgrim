@@ -1,9 +1,15 @@
 import React from 'react'
+import UploadWidget from '../components/UploadWidget'
 
-const tripReview = () => {
+const Review = () => {
   return (
+<>
+
     <div>tripReview</div>
+
+    <UploadWidget />
+</>
   )
 }
 
-export default tripReview
+export default Review

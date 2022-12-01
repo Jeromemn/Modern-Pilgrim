@@ -40,17 +40,19 @@ function App() {
           <Route exact path="/" element={<Home />} />
 
           {/* <Route path="/myProfile" element={<Profile />} /> */}
-          <Route path="/Review" element={<Review />} />
+          <Route path="/review" element={<Review />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
 
           <Route path="/signup" element={<Signup />} />
 
+          {/* <Route path="/tr" element={<Search/>} /> */}
+
           {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
 
           <Route path="/trips/:tripid" element={<Trip/>} />
-          <Route path="/search" element={<Search/>} />
+          {/* <Route path="/search" element={<Search/>} /> */}
         </Routes>
         <div>
           {/* <Footer /> */}

@@ -18,6 +18,7 @@ const typeDefs = gql`
     price: Float
     rating: Int
     comments: [Comment]
+    image: String
   }
   type Comment {
     _id: ID
