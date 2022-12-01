@@ -3,8 +3,11 @@ const { User, Trip, Comment } = require("../models");
 const resolvers = {
   Query: {
     // working
-    getTrip: async () => {
+    getTrips: async () => {
       return await Trip.find();
+    },
+    getTripById: async (parent, { _id }) => {
+      return await Trip.findById(_id);
     },
     // getTrip: async (parent, { _id }) => {
     //   return await Trip.findById(_id);
@@ -44,7 +47,9 @@ const resolvers = {
       const shouldApplyPriceFilter = price;
 
       if (shouldApplyLocationFilter) {
-        trips = trips.filter((a) => a.location.toLowerCase() === location.toLowerCase());
+        trips = trips.filter(
+          (a) => a.location.toLowerCase() === location.toLowerCase()
+        );
       }
 
       if (shouldApplyPriceFilter) {

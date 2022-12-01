@@ -44,7 +44,7 @@ function App() {
 
           {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
 
-          <Route path="/trips/:tripid" element={<Trip />} />
+          <Route path="/trips/:tripId" element={<Trip />} />
           <Route path="/search" element={<Search />} />
         </Routes>
         <div>{/* <Footer /> */}</div>
