@@ -1,0 +1,21 @@
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+function SignupBtn() {
+    const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
+  return (
+    <button
+    className="btn btn-primary btn-block"
+    onClick={() =>
+        loginWithRedirect({
+        screen_hint: 'signup',
+        })
+    }
+    >
+    Sign Up
+    </button>
+  )
+}
+
+export default SignupBtn

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import LoginBtn from "../Buttons/LoginBtn"
+import LogoutBtn from "../Buttons/LogoutBtn";
+import SignupBtn from "../Buttons/SignupBtn";
 
 export default function NavTabs() {
   return (
     <>
       <ul>
         <li>
-          <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link>
+          {/* <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link> */}
           My Profile
         </li>
 
@@ -24,16 +27,15 @@ export default function NavTabs() {
         </li>
 
         <li>
-            <Link to='/login'></Link>
-        {/* // href="#Login" onClick={() => handlePageChange("Login")}> */}
-          Sign in
+        <LoginBtn/>
         </li>
 
         <li>
-            <Link to='/signup'></Link>
+       <SignupBtn/>
+        </li>
         
-        {/* href="#Join" onClick={() => handlePageChange("Join")}> */}
-          Sign up
+        <li>
+          <LogoutBtn/>
         </li>
       </ul>
     </>
