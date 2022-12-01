@@ -164,7 +164,7 @@ const useTripsSearchFilter = () => {
            <Search
         onChange={(e) => operations.updateSearchFilter("location", e.target.value)}
         type="string"
-        onClick={() => 
+        onSubmit={() => 
         refetch({
           tripsInput: { location: models.filters.location },
         })}

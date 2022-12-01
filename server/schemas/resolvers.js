@@ -44,7 +44,7 @@ const resolvers = {
       const shouldApplyPriceFilter = price;
 
       if (shouldApplyLocationFilter) {
-        trips = trips.filter((a) => a.location === location);
+        trips = trips.filter((a) => a.location.toLowerCase() === location.toLowerCase());
       }
 
       if (shouldApplyPriceFilter) {

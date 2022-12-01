@@ -11,7 +11,7 @@ const Search = ({ value, onChange, onSubmit }) => {
       <div>
         Search
         <input type="text" onChange={onChange} value={value} />
-        <button onSubmit={onSubmit}> Search </button>
+        <button onClick={onSubmit}> Search </button>
       </div>
       {/* 
         {data && 
