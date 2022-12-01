@@ -1,6 +1,9 @@
 // import { useHistory, Link } from "react-router-dom";
 // import videoHeader from "../../assets/headerEdit.mp4";
-// import videoHeader from "https://www.canva.com/design/DAFSzJFnd0A/watch";
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedVideo } from '@cloudinary/react';
+// import {fill} from "@cloudinary/url-gen/actions/resize";
+
 
 import styled from "styled-components";
 
@@ -53,22 +56,34 @@ z-index: 9;
 
 `;
 
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: 'ddhobdqkx',
+    apiKey: '232238398692322',
+    apiSecret: 'oRkkZ-sLOzBKtfHp_ph0SEEhhEI',
+
+  }
+});
+
 export default function HeaderContainer() {
+  const headerImage = cld.video('headerEdit')
+  console.log(headerImage);
   return (
     <>
       <Header>
         <TitleContainer>
 
         <VideoWrapper>
-            
+        <AdvancedVideo cldVid={headerImage} autoPlay muted loop />
 
-          <Video
-            // src={videoHeader}
+          {/* <video
+            src={headerImage}
             type="video/mp4"
             autoPlay
             muted
             loop
-            ></Video>
+            ></video>  */}
             <Header1> Modern Pilgrims </Header1>
         </VideoWrapper>
             </TitleContainer>

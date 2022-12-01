@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+// import { Cloudinary } from '@cloudinary/url-gen';
+// import {AdvancedImage} from '@cloudinary/react';
+// import {fill} from "@cloudinary/url-gen/actions/resize";
 import Home from "./pages/Home";
 // import Profile from "./pages/Profile";
 import Review from "./pages/TripReview";
