@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import Filters from "./Filter";
 // import { QUERY_TRIPS } from "../../utils/queries.js";
 import { FIND_TRIP } from "../../utils/queries.js";
+import styled from "styled-components";
 
 // import styled from 'styled-components';
 
@@ -29,98 +30,13 @@ import { FIND_TRIP } from "../../utils/queries.js";
 // grid-template-rows: .2fr .2fr .2fr .2fr;
 // `;
 
-// const TripItem = styled(li)(({ theme }) => ({
-//     list-style: none,
-// }));
-
-// const mockTrips = [
-//   {
-//     id: 1,
-//     name: "Some Dope Trip",
-//     city: "Mesa",
-//     state: "Arizona",
-//     country: "united states",
-//     description: "Sickest trip of my life",
-//     price: "500.00",
-//   },
-//   {
-//     id: 2,
-//     name: "Some Dope Trip2",
-//     city: "New York",
-//     state: "New York",
-//     description: "Sickest trip of my life2",
-//     price: "500.00",
-//   },
-//   {
-//     id: 3,
-//     name: "Some Dope Trip",
-//     city: "Mesa",
-//     state: "Arizona",
-//     description: "Sickest trip of my life",
-//     price: "500.00",
-//   },
-//   {
-//     id: 4,
-//     name: "Some Dope Trip",
-//     city: "Mesa",
-//     state: "Arizona",
-//     description: "Sickest trip of my life",
-//     price: "500.00",
-//   },
-//   {
-//     id: 5,
-//     name: "Some Dope Trip",
-//     city: "Mesa",
-//     state: "Arizona",
-//     description: "Sickest trip of my life",
-//     price: "500.00",
-//   },
-// ];
-
-// const Feed = () => {
-//     // const [result, setResult] = useState({});
-
-//   const [search, setSearch] = useState("");
-//   const [price, setPrice] = useState("");
-//   // const [searchFilter, setSearchFilter] = useState('');
-//   const {
-//     data: trips,
-//     loading,
-//     error,
-//     fetchMore,
-//   } = useQuery(`query.....`, { variables });
-
-//   const handleChange = (e) => setSearch(e.target.value);
-//   const handleFilterTrips = () => {
-//     fetchMore({ variables: { location: search, price: price } });
-//   };
-//   // const upDateChange = (e) => setSearchFilter(e.target.value);
-// //   const searchTrips = (query) =>
-// //     API.search(query)
-// //       .then((res) => setResult(res.data))
-// //       .catch((err) => console.log(err));
-
-//   if (error) {
-//     console.log(error);
-//   }
-
-//   if (loading) {
-//     return <p>loading...</p>;
-//   }
+const FilterContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`;
 
 
-//   return (
-//     <div>
-//       <Search
-//         onChange={handleChange}
-//         value={search}
-//         onSubmit={handleFilterTrips}
-//       />
-//       <Filters />
-//       <List items={mockTrips} />
-//     </div>
-//   );
-// };
 
 
 //  testing
@@ -160,8 +76,8 @@ const useTripsSearchFilter = () => {
   
   return (
     <div>
-      <div>
-           <Search
+      <FilterContainer>
+      <Filters />  <Search
         onChange={(e) => operations.updateSearchFilter("location", e.target.value)}
         type="string"
         onSubmit={() => 
@@ -171,8 +87,8 @@ const useTripsSearchFilter = () => {
         // value={search}
         // onSubmit={handleFilterTrips}
       />
-      </div>
-      <Filters />
+      {/* <Filters /> */}
+      </FilterContainer>
       <div>
         {/* maybe {[].map */}
       {trips.trip.map((trip, i) => (
