@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
-const Post = require("../models/Post");
+const Trip = require("./Trip");
 
 const userSchema = new Schema({
   username: {
@@ -20,7 +20,7 @@ const userSchema = new Schema({
   posts: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Post",
+      ref: "Trip",
     },
   ],
 });

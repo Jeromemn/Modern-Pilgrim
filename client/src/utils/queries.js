@@ -1,112 +1,145 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-query user($username: String!) {
+  query user($username: String!) {
     user(username: $username) {
-    _id
-    username
-    email
-    trips {
+      _id
+      username
+      email
+      trips {
         _id
-        tripText
-        tripLocation
-        tripPrice
-        tripRating
-        createdAt
+        # tripText
+        user
+        summary
+        location
+        price
+        rating
+        comments
+      }
     }
-    }
-}
+  }
 `;
 
 export const QUERY_TRIPS = gql`
-query getTrips {
-    trips {
-    _id
-    tripText
-    tripLocation
-    tripPrice
-    tripRating
-    tripAuthor
-    createdAt
+  query getTrips {
+    trip {
+      _id
+      # tripText
+      user
+      summary
+      location
+      price
+      rating
+      comments
     }
-}
+  }
 `;
 
 export const QUERY_SINGLE_TRIP = gql`
-query getSingleTrip($tripId: ID!) {
-    trip(tripId: $tripId) {
+  query getSingleTrip($tripId: ID!) {
+    getSingletrip(tripId: $tripId) {
+      _id
+      # tripText
+      user
+      summary
+      location
+      price
+      rating
+
+      comments {
         _id
-        tripText
-        tripLocation
-        tripPrice
-        tripRating
-        tripAuthor
-        createdAt
-        comments {
-            _id
-            commentText
-            createdAt
-        }
+        commentText
+        commentUser
+      }
     }
-}`;
+  }
+`;
 
 export const QUERY_ME = gql`
-query me {
+  query me {
     me {
+      _id
+      username
+      email
+      bio
+      trips {
         _id
-        username
-        email
-        bio
-        trips {
-            _id
-            tripText
-            tripLocation
-            tripPrice
-            tripRating
-            tripAuthor
-            createdAt
-        }
+        # tripText
+        user
+        summary
+        location
+        price
+        rating
+        comments
+      }
     }
-}`;
+  }
+`;
 
 export const QUERY_SINGLE_PROFILE = gql`
-query singleProfile($profileID: ID!) {
+  query singleProfile($profileID: ID!) {
     profile(profileId: $profileID) {
+      _id
+      username
+      trip {
         _id
-        username
-        trips {
-            _id
-            tripText
-            tripLocation
-            tripPrice
-            tripRating
-            tripAuthor
-            createdAt
-        }
+        # tripText
+        user
+        summary
+        location
+        price
+        rating
+        comments
+      }
     }
-}`
+  }
+`;
 
 export const TRIP_SEARCH_QUERY = gql`
-query tripSearch($filter: String!)  {
+  query tripSearch($filter: String!) {
     feed(filter: $filter) {
-    _id
-    trips {
+      _id
+      trips {
         _id
-        tripText
-        tripLocation
-        tripPrice
-        tripRating
-        createdAt
-        tripAuthor {
-        id
-        username
+        # tripText
+        user
+        summary
+        location
+        price
+        rating
+        comments
+        user {
+          _id
+          username
         }
         comments {
-            _id
-            commentText
-            createdAt
+          _id
+          commentText
+          commentUser
         }
+      }
     }
+  }
+`;
+
+export const FIND_TRIP = gql`
+  query trip($tripsInput: TripsSearchFilter) {
+    trip(input: $tripsInput) {
+      _id
+      # tripText
+
+      summary
+      location
+      price
+      rating
+      user {
+        _id
+        username
+      }
+      comments {
+        _id
+        commentText
+      }
     }
-}
+  }
 `;

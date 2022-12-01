@@ -1,5 +1,5 @@
 const db = require("../config/connection");
-const { User, Post, Comment } = require("../models");
+const { User, Trip, Comment } = require("../models");
 
 db.once("open", async () => {
   await Comment.deleteMany();
@@ -13,9 +13,9 @@ db.once("open", async () => {
 
   console.log("comments seeded");
 
-  await Post.deleteMany();
+  await Trip.deleteMany();
 
-  const posts = await Post.insertMany([
+  const trip = await Trip.insertMany([
     {
       user: "63866715a7f9cb9e7bba13be",
       location: "Tin of  Cookies",
@@ -59,22 +59,22 @@ db.once("open", async () => {
   await User.create({
     username: "Pamela",
     email: "pamela@testmail.com",
-    posts: [posts[0]._id],
+    trip: [trip[0]._id],
   });
 
   await User.create({
     username: "Elijah",
     email: "eholt@testmail.com",
-    posts: [posts[2]._id],
+    trip: [trip[2]._id],
   });
 
   const userData = await User.find({});
-  const postData = await Post.find({});
+  const tripData = await Trip.find({});
   const commentData = await Comment.find({});
 
   console.log(`users seeded`);
   console.log(userData);
-  console.log(postData);
+  console.log(trip);
   console.log(commentData);
 
   process.exit();

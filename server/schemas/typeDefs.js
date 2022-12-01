@@ -1,14 +1,16 @@
 const { gql } = require("apollo-server-express");
 
+// need to make a query me
+
 const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
     bio: String
-    posts: [Post]
+    trip: [Trip]
   }
-  type Post {
+  type Trip {
     _id: ID
     user: User
     summary: String
@@ -17,41 +19,78 @@ const typeDefs = gql`
     rating: Int
     comments: [Comment]
   }
-
   type Comment {
     _id: ID
     commentText: String
     commentUser: String
   }
+  # i added
+  input TripsSearchFilter {
+    # _id: ID
+    location: String
+    price: Float
+    # offet
+    # limit
+  }
+  #  ask about this 
+  # type TripInput {
+  #   filter: TripsSearchFilter
+  # }
+  # end added
   type Query {
-    getPosts: [Post]
-    getPost(_id: ID): Post
+    getTrip: [Trip]
+    # getTrip(_id: ID): Trip
     getComments: [Comment]
     getUser(_id: ID): User
-    searchPost(value: String): [Post]
-    getPrices(search: Float): Post
-    getRating(search: Int): Post
+    searchTrip(value: String): [Trip]
+    getPrices(search: Float): Trip
+    getRating(search: Int): Trip
+    trip(input: TripsSearchFilter): [Trip]
   }
   type Mutation {
     addUser(username: String!, email: String!, bio: String): User
-    addPost(
+    addTrip(
       user: ID
       summary: String!
       location: String!
       price: Float!
       rating: Int!
-    ): Post
+    ): Trip
     addComment(commentUser: String, commentText: String!): Comment
     updateUser(username: String, email: String, bio: String): User
-    updatePost(
+    updateTrip(
       user: ID
       summary: String!
       location: String!
       price: Float!
       rating: Int!
-    ): Post
-    deletePost(_id: ID): Post
+    ): Trip
+    deleteTrip(_id: ID): Trip
   }
+  # type Mutation {
+  #   addUser(
+  #     username: String!
+  #     email: String!
+  #     bio: String!
+  #   ): Auth
+  #   addTrip(
+  #     user: User!
+  #     summary: String!
+  #     location: String!
+  #     price: Float!
+  #     rating: Int!
+  #   ): Trip
+  #   addComment(Trip: Trip!, textField: String!): Comment
+  #   updateUser(username: String, email: String, bio: String): User
+  #   updateTrip(
+  #     user: User!
+  #     summary: String!
+  #     location: String!
+  #     price: Float!
+  #     rating: Int!
+  #   ): Trip
+  #   deleteTrip(_id: ID): Trip
+  # }
 `;
 
 module.exports = typeDefs;
