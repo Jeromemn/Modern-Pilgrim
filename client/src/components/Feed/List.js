@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components";
 import { useState } from "react";
 
+import madrid from '../../assets/madrid.jpg'
+
 const TripBox = styled.li`
 border: solid black 2px;
 height: 15rem;
@@ -10,6 +12,11 @@ width: 15rem;
 display: grid;
 grid-template-rows: 2rem 1fr 2rem ;
 grid-template-columns: 1rem 1fr 1rem;
+background-image: url(${madrid});
+background-image: cover;
+background-size:25rem;
+/* background-clip: border-box; */
+background-repeat: no-repeat;
 /* grid-template-areas: "a b c" "d e f"  'g h i' */
 
 /* list-style-type: none; */
@@ -27,11 +34,13 @@ margin: 0 auto;
 grid-column: 2 / 3;
 grid-row: 1 ;
 align-self: center;
+/* color: white; */
 /* grid-area: "a b c"; */
 `;
 
 const LinkStyle = styled(Link)`
 Text-decoration: none;
+color: white;
 
 
 `;
@@ -41,6 +50,7 @@ const Price = styled.p`
 /* justify-content: center; */
 align-self: center;
 justify-self: flex-end;
+color: white;
 
 grid-column: 2 /3;
 grid-row: 3;
@@ -55,6 +65,8 @@ list-style-type: none;
 justify-content: start;
 align-content: center;
 padding: 0;
+color: white;
+
 /* display: none; */
 
 /* &:hover {
@@ -98,7 +110,9 @@ return (
     </TripInfo>
         )}
     {/* </div> */}
-    <div background={trip.image} src={trip.image}></div>
+    {/* <div background={madrid} src={madrid}></div> */}
+
+    {/* <div background={trip.image} src={trip.image}></div> */}
     {/* set the second ul to display on hover */}
  
   </TripBox>
