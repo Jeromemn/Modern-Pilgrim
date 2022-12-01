@@ -2,15 +2,21 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Review from "./pages/Tripreview";
-import Signup from "./pages/Signup";
+// import Profile from "./pages/Profile";
+import Review from "./pages/TripReview";
+import Signup from "./pages/SignUp";
 import Login from "./pages/Login"
-import Logout from "./pages/Logout"
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Trip from "./pages/Trip"
+import Logout from './pages/Logout'
+import Header from "./components/Header/SecondHeader";
+import HomeHeader from "./components/HomeHeader/HomeHeader"
+import Footer from "./components/Footer/Footer";
+import Search from "./components/Feed/Search"
+// import Feed from "./components/Feed/index"
 
-// add in auth middleware for auth system we set up
+
+
+// add in auth middleware for auth system we set up 
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -21,26 +27,30 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <Header />
-        </div>
+        {/* <div> */}
+          {/* <HomeHeader /> */}
+        {/* <Home /> */}
+        {/* </div> */}
+        {/* <div> */}
+        {/* </div> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
 
-          <Route path="/myProfile" element={<Profile />} />
+          {/* <Route path="/myProfile" element={<Profile />} /> */}
           <Route path="/Review" element={<Review />} />
 
           <Route path="/login" element={<Login />} />
-
-          <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />} />
 
-          <Route path="/profiles/:username" element={<Profile />} />
+          <Route path="/signup" element={<Signup />} />
 
-          <Route path="/trips/:tripid" element={<Trip />} />
+          {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
+
+          <Route path="/trips/:tripid" element={<Trip/>} />
+          <Route path="/search" element={<Search/>} />
         </Routes>
         <div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
