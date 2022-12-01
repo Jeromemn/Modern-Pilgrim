@@ -5,18 +5,16 @@ import Home from "./pages/Home";
 // import Profile from "./pages/Profile";
 import Review from "./pages/TripReview";
 import Signup from "./pages/SignUp";
-import Login from "./pages/Login"
-import Trip from "./pages/Trip"
-import Logout from './pages/Logout'
-import Header from "./components/Header/SecondHeader";
-import HomeHeader from "./components/HomeHeader/HomeHeader"
-import Footer from "./components/Footer/Footer";
-import Search from "./components/Feed/Search"
+import Login from "./pages/Login";
+import Trip from "./pages/Trip";
+import Logout from "./pages/Logout";
+// import Header from "./components/Header/SecondHeader";
+// import HomeHeader from "./components/HomeHeader/HomeHeader"
+// import Footer from "./components/Footer/Footer";
+import Search from "./components/Feed/Search";
 // import Feed from "./components/Feed/index"
 
-
-
-// add in auth middleware for auth system we set up 
+// add in auth middleware for auth system we set up
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -28,7 +26,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         {/* <div> */}
-          {/* <HomeHeader /> */}
+        {/* <HomeHeader /> */}
         {/* <Home /> */}
         {/* </div> */}
         {/* <div> */}
@@ -46,12 +44,10 @@ function App() {
 
           {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
 
-          <Route path="/trips/:tripid" element={<Trip/>} />
-          <Route path="/search" element={<Search/>} />
+          <Route path="/trips/:tripid" element={<Trip />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
-        <div>
-          {/* <Footer /> */}
-        </div>
+        <div>{/* <Footer /> */}</div>
       </Router>
     </ApolloProvider>
   );
