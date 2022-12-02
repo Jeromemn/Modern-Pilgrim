@@ -20,22 +20,15 @@ const Review = () => {
   const { user } = useAuth0();
   const navigate = useNavigate();
 
-  console.log(user);
 
-  // const [ updateTrip, setUpdateTrip] = usestate('');
 
   const [addTrip, { data, loading, error }] = useMutation(ADD_TRIP);
 
-  // const onsumbmit = async (e) => {
-  //   e.preventDefault();
-  //   // setTripForm()
-  //   try
-  // }
-  // })
+
   const onSubmit = () => {
     addTrip({
       variables: {
-        username: user.nickname,
+        username: user?.nickname || "botty the bot",
         location,
         summary,
         price: parseInt(price),
@@ -58,7 +51,6 @@ const Review = () => {
     navigate("/");
     // return redirect('/')
   }
-  // console.log(location);
 
   return (
     <>
