@@ -26,12 +26,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/* <div> */}
-        {/* <HomeHeader /> */}
-        {/* <Home /> */}
-        {/* </div> */}
-        {/* <div> */}
-        {/* </div> */}
+        
         <Routes>
           <Route exact path="/" element={<Home />} />
 
@@ -41,7 +36,7 @@ function App() {
           {/* <Route path="/profiles/:username" element={<Profile/>} /> */}
 
           <Route path="/trips/:tripId" element={<Trip />} />
-          <Route path="/search" element={<Search />} />
+          {/* <Route path="/search" element={<Search />} /> */}
         </Routes>
         <div>{/* <Footer /> */}</div>
       </Router>
