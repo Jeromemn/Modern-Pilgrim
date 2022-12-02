@@ -15,20 +15,26 @@ display: flex;
   padding-top: 1rem;
 `;
 
+// const FeedContainer = styled.div`
+// display: flexbox;
+// flex-wrap: wrap;
+
+// `;
+
 function Home() {
   return (
     <>
       <HomeHeader />
-      <SearchContainer>
+      {/* <SearchContainer> */}
         {/* <Search /> */}
-      </SearchContainer>
+      {/* </SearchContainer> */}
 < Navbar />
-      <div>
+      {/* <FeedContainer> */}
         {/* <CardContainer> */}
 
         <FeedCont />
         {/* </CardContainer> */}
-      </div>
+      {/* </FeedContainer> */}
     </>
   );
 }

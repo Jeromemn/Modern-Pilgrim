@@ -5,6 +5,15 @@ import SignupBtn from "../Buttons/SignupBtn";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import styled from "styled-components";
+
+const LinkStyle = styled(Link)`
+text-decoration: none;
+color: black;
+
+`;
+
+
 
 export default function NavTabs() {
   return (
@@ -12,16 +21,16 @@ export default function NavTabs() {
     <Navbar bg="light" variant="light">
     <Container>
     <Nav className="me-auto">
-        <Nav.Link to='/profile'>
-          My Profile</Nav.Link>
+        <LinkStyle to='/profile'>
+          My Profile</LinkStyle>
           
 
-        <Nav.Link to='/Review'>
-          Submit a Voyage</Nav.Link>
+        <LinkStyle to='/Review'>
+          Submit a Voyage</LinkStyle>
       
 
-          <Nav.Link to='/'>
-          Explore</Nav.Link>
+          <LinkStyle to='/'>
+          Explore</LinkStyle>
 
 
         <Nav>

@@ -16,6 +16,8 @@ const TripBox = styled.li`
   background-image: url(${({$image}) => $image });
   background-image: cover;
   background-size: 25rem;
+  margin: 1rem;
+  /* padding: 5rem; */
   /* background-clip: border-box; */
   background-repeat: no-repeat;
   /* grid-template-areas: "a b c" "d e f"  'g h i' */
@@ -112,9 +114,9 @@ export default function ListItem({ trip, i }) {
       </CardHeader>
       {/* <h4> {trip.country} </h4> */}
       <Price> Cost: {trip.price} </Price>
-      <p> {trip.username}</p>
       {isHovering && (
         <TripInfo>
+          <p> {trip.username}</p>
           <li> Rating: {trip.rating}</li>
           <li> Summary: {trip.summary}</li>
         </TripInfo>
