@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -5,14 +6,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 // import { Cloudinary } from '@cloudinary/url-gen';
 // import {AdvancedImage} from '@cloudinary/react';
 // import {fill} from "@cloudinary/url-gen/actions/resize";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Review from "./pages/TripReview";
-import Trip from "./pages/Trip";
-import Header from "./components/Header/SecondHeader";
-import HomeHeader from "./components/HomeHeader/HomeHeader";
-import Footer from "./components/Footer/Footer";
-import Search from "./components/Feed/Search";
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Review from './pages/TripReview';
+import Trip from './pages/Trip';
+// import Header from "./components/Header/SecondHeader";
+// import HomeHeader from "./components/HomeHeader/HomeHeader";
+// import Footer from "./components/Footer/Footer";
+// import Search from "./components/Feed/Search";
 // import Feed from "./components/Feed/index"
 
 // add in auth middleware for auth system we set up
