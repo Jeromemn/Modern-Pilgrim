@@ -32,6 +32,8 @@ db.once("open", async () => {
       summary:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       price: 2.99,
+      image: 'cld-sample-2',
+
       rating: 7,
     },
     {
@@ -40,6 +42,8 @@ db.once("open", async () => {
       summary:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       price: 2.99,
+      image: 'kbg5jiqm4cyxlindd9to',
+
       rating: 5,
       comments: [comments[2]._id, comments[3]._id],
     },
@@ -49,6 +53,8 @@ db.once("open", async () => {
       summary:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       price: 2.99,
+      image: 'kbg5jiqm4cyxlindd9to',
+
       rating: 4,
     },
   ]);

@@ -59,3 +59,11 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+// export const UPLOAD_FILE = gql`
+// mutation upload($file: Upload!) {
+// upload(file: $file) {
+//   filename
+// }
+// }
+// `;

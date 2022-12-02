@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react";
 
 
-const UploadWidget = () => {
+const UploadWidget = ({onUpload}) => {
 const cloudinaryRef = useRef();
 const widgetRef = useRef();
+
+
+// 
 
 useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
@@ -14,6 +17,7 @@ useEffect(() => {
 
     }, function(error, result) {
         console.log(result);
+        onUpload(result)
     })
 }, [])
 

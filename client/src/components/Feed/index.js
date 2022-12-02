@@ -31,91 +31,84 @@ import styled from "styled-components";
 // `;
 
 const FilterContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
 `;
 
 const TripsContainer = styled.div`
-display: flex;
-align-content: center;
-justify-content: space-between;
-padding: 5rem;
-list-style-type: none;
-
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 5rem;
+  list-style-type: none;
 `;
-
-
-
 
 //  testing
 const FeedCont = () => {
-
-const useTripsSearchFilter = () => {
-  const [ filters, _updateSearchFilter] = useState({
-    id: undefined,
-    location:undefined
-  });
-
-  const updateSearchFilter = (filterType, value) => {
-    _updateSearchFilter({
-      [filterType]: value,
+  const useTripsSearchFilter = () => {
+    const [filters, _updateSearchFilter] = useState({
+      id: undefined,
+      location: undefined,
     });
-  };
 
-  return {
-    models: { filters }, 
-    operations: { updateSearchFilter },
-  }
-}
+    const updateSearchFilter = (filterType, value) => {
+      _updateSearchFilter({
+        [filterType]: value,
+      });
+    };
+
+    return {
+      models: { filters },
+      operations: { updateSearchFilter },
+    };
+  };
   // feedcount was here
   const { operations, models } = useTripsSearchFilter();
-  const { data: trips , loading, error, refetch } = useQuery(FIND_TRIP);
+  const { data: trips, loading, error, refetch } = useQuery(FIND_TRIP);
 
   if (loading) {
-  return <div> Loading..</div>
+    return <div> Loading..</div>;
   }
   if (error) {
-    console.log(error)
-  return <div> Error </div>
+    console.log(error);
+    return <div> Error </div>;
   }
 
-
-  
-  
   return (
     <div>
       <FilterContainer>
-      <Filters />  <Search
-        onChange={(e) => operations.updateSearchFilter("location", e.target.value)}
-        type="string"
-        onSubmit={() => 
-        refetch({
-          tripsInput: { location: models.filters.location },
-        })}
-        // value={search}
-        // onSubmit={handleFilterTrips}
-      />
-      {/* <Filters /> */}
+        <Filters />{" "}
+        <Search
+          onChange={(e) =>
+            operations.updateSearchFilter("location", e.target.value)
+          }
+          type="string"
+          onSubmit={() =>
+            refetch({
+              tripsInput: { location: models.filters.location },
+            })
+          }
+          // value={search}
+          // onSubmit={handleFilterTrips}
+        />
+        {/* <Filters /> */}
       </FilterContainer>
       <TripsContainer>
         {/* maybe {[].map */}
-      {trips.trip.map((trip, i) => (
-        <ListItem trip={trip} key={i}/>
+        {trips.trip.map((trip, i) => (
+          <ListItem trip={trip} key={i} />
         ))}
-        </TripsContainer>
-
+      </TripsContainer>
     </div>
-  )
-}
-
-
+  );
+};
 
 export default FeedCont;
 
 // function Feed() {
-    
+
 //   return (
 //     <>
 //       <div>
@@ -155,5 +148,3 @@ export default FeedCont;
 //     </>
 //   );
 // };
-
-

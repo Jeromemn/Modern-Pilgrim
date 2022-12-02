@@ -23,6 +23,10 @@ const tripSchema = new Schema({
     type: Number,
     required: true,
   },
+  image: {
+    type: String,
+    // required: true,
+  },
   comments: [
     {
       type: Schema.Types.ObjectId,

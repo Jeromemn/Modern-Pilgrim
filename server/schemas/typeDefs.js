@@ -33,6 +33,11 @@ const typeDefs = gql`
     # offet
     # limit
   }
+# 
+  # type File {
+  #   filename:String!
+  #   mimeType: String!
+  # }
   #  ask about this 
   # type TripInput {
   #   filter: TripsSearchFilter
@@ -47,6 +52,9 @@ const typeDefs = gql`
     getPrices(search: Float): Trip
     getRating(search: Int): Trip
     trip(input: TripsSearchFilter): [Trip]
+    # 
+    # image(String!): [Trip]
+    # uploads: [File]
   }
   type Mutation {
     addUser(username: String!, email: String!, bio: String): User
@@ -67,6 +75,8 @@ const typeDefs = gql`
       rating: Int!
     ): Trip
     deleteTrip(_id: ID): Trip
+    # 
+    # singleUpload(file: Upload!): File
   }
   # type Mutation {
   #   addUser(
@@ -95,3 +105,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// curl 'https://232238398692322:oRkkZ-sLOzBKtfHp_ph0SEEhhEI@api.cloudinary.com/v1_1/<ddhobdqkx>/resources/image'

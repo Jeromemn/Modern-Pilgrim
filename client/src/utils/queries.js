@@ -126,12 +126,11 @@ export const FIND_TRIP = gql`
   query trip($tripsInput: TripsSearchFilter) {
     trip(input: $tripsInput) {
       _id
-      # tripText
-
       summary
       location
       price
       rating
+      image
       user {
         _id
         username
@@ -143,3 +142,14 @@ export const FIND_TRIP = gql`
     }
   }
 `;
+
+// export const FIND_iMAGES = gql`
+//  query getImages {
+//   getImages
+//   allCloudinaryMedia {
+//     filter: {
+//       publicName
+//     }
+//   }
+//  }
+// `;
