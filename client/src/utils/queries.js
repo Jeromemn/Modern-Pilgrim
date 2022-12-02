@@ -25,7 +25,7 @@ export const QUERY_TRIPS = gql`
     trip {
       _id
       # tripText
-      user
+      username
       summary
       location
       price
@@ -40,7 +40,7 @@ export const QUERY_SINGLE_TRIP = gql`
     getSingletrip(tripId: $tripId) {
       _id
       # tripText
-      user
+      username
       summary
       location
       price
@@ -102,7 +102,7 @@ export const TRIP_SEARCH_QUERY = gql`
       trips {
         _id
         # tripText
-        user
+        username
         summary
         location
         price
@@ -131,10 +131,7 @@ export const FIND_TRIP = gql`
       price
       rating
       image
-      user {
-        _id
-        username
-      }
+      username
       comments {
         _id
         commentText
@@ -142,14 +139,3 @@ export const FIND_TRIP = gql`
     }
   }
 `;
-
-// export const FIND_iMAGES = gql`
-//  query getImages {
-//   getImages
-//   allCloudinaryMedia {
-//     filter: {
-//       publicName
-//     }
-//   }
-//  }
-// `;

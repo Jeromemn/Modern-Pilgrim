@@ -4,6 +4,11 @@ const { Schema, model } = mongoose;
 const Trip = require("./Trip");
 
 const userSchema = new Schema({
+  _id: {
+    type: String,
+    required: true,
+    // using auto0 sub id 
+  },
   username: {
     type: String,
     required: true,

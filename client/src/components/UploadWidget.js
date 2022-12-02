@@ -16,8 +16,7 @@ useEffect(() => {
 
 
     }, function(error, result) {
-        console.log(result);
-        onUpload(result)
+        onUpload(error, result);
     })
 }, [])
 

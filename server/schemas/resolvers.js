@@ -86,18 +86,7 @@ const resolvers = {
       deleteTrip: async (parent, { _id }) => {
         return await Trip.findByIdAndRemove(_id);
       },
-      // singleUplaod: async (parent, { file }) => {
-      //   //  stream content into cloud 
-      //   const { stream, filename }
-      // }
-      // updateTrip: async (parent, { id }) => {
-
-      //   return Product.findByIdAndUpdate(
-      //     id,
-      //     { $inc: { quantity: decrement } },
-      //     { new: true }
-      //   );
-      // },
+     
     },
 };
 

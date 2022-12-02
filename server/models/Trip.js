@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  username: {
+    type: String,
+    required: true,
+    // ref: "Username",
   },
   summary: {
     type: String,
@@ -21,11 +22,11 @@ const tripSchema = new Schema({
   },
   rating: {
     type: Number,
-    required: true,
+    // required: true,
   },
   image: {
     type: String,
-    // required: true,
+    required: true,
   },
   comments: [
     {
