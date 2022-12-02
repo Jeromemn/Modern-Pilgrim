@@ -9,6 +9,12 @@ const resolvers = {
     getTripById: async (parent, { _id }) => {
       return await Trip.findById(_id);
     },
+    // upLoad: async () => {
+    // },
+    // getImages: async () => {
+    //   return await curl ''
+    // },
+    // return await File.find()
     // getTrip: async (parent, { _id }) => {
     //   return await Trip.findById(_id);
     // },
@@ -61,42 +67,35 @@ const resolvers = {
       return trips;
     },
   },
-  //   Mutation: {
-  //     addUser: async (parent, args) => {
-  //       return await User.create(args);
-  //     },
-  //     addTrip: async (parent, args) => {
-  //       return await Trip.create(args);
-  //     },
-  //     addComment: async (parent, args) => {
-  //       return await Comment.create(args);
-  //     },
-  //     updateUser: async (_, { _id }) => {
-  //       if (_id) {
-  //         return await User.findByIdAndUpdate(_id, args, {
-  //           new: true,
-  //         });
-  //       }
-  //     },
-  //     updateTrip: async (_, { _id }) => {
-  //       if (_id) {
-  //         return await Trip.findByIdAndUpdate(_id, args, {
-  //           new: true,
-  //         });
-  //       }
-  //     },
-  //     deleteTrip: async (parent, { _id }) => {
-  //       return await Trip.findByIdAndRemove(_id);
-  //     },
-  //     // updateTrip: async (parent, { id }) => {
-
-  //     //   return Product.findByIdAndUpdate(
-  //     //     id,
-  //     //     { $inc: { quantity: decrement } },
-  //     //     { new: true }
-  //     //   );
-  //     // },
-  //   },
+    Mutation: {
+      addUser: async (parent, args) => {
+        return await User.create(args);
+      },
+      addTrip: async (parent, args) => {
+        return await Trip.create(args);
+      },
+      addComment: async (parent, args) => {
+        return await Comment.create(args);
+      },
+      updateUser: async (_, { _id }) => {
+        if (_id) {
+          return await User.findByIdAndUpdate(_id, args, {
+            new: true,
+          });
+        }
+      },
+      updateTrip: async (_, { _id }) => {
+        if (_id) {
+          return await Trip.findByIdAndUpdate(_id, args, {
+            new: true,
+          });
+        }
+      },
+      deleteTrip: async (parent, { _id }) => {
+        return await Trip.findByIdAndRemove(_id);
+      },
+     
+    },
 };
 
 module.exports = resolvers;

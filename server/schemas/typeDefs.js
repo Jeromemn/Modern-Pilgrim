@@ -12,12 +12,13 @@ const typeDefs = gql`
   }
   type Trip {
     _id: ID
-    user: User
+    username: String
     summary: String
     location: String
     price: Float
     rating: Int
     comments: [Comment]
+    image: String
   }
   type Comment {
     _id: ID
@@ -32,7 +33,12 @@ const typeDefs = gql`
     # offet
     # limit
   }
-  #  ask about this
+# 
+  # type File {
+  #   filename:String!
+  #   mimeType: String!
+  # }
+  #  ask about this 
   # type TripInput {
   #   filter: TripsSearchFilter
   # }
@@ -47,15 +53,19 @@ const typeDefs = gql`
     getRating(search: Int): Trip
     trip(input: TripsSearchFilter): [Trip]
     me(username: String): User
+    # 
+    # image(String!): [Trip]
+    # uploads: [File]
   }
   type Mutation {
     addUser(username: String!, email: String!, bio: String): User
     addTrip(
-      user: ID
+      username: String!
       summary: String!
       location: String!
       price: Float!
-      rating: Int!
+      rating: Int
+      image: String!
     ): Trip
     addComment(commentUser: String, commentText: String!): Comment
     updateUser(username: String, email: String, bio: String): User
@@ -67,6 +77,8 @@ const typeDefs = gql`
       rating: Int!
     ): Trip
     deleteTrip(_id: ID): Trip
+    # 
+    # singleUpload(file: Upload!): File
   }
   # type Mutation {
   #   addUser(
@@ -95,3 +107,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// curl 'https://232238398692322:oRkkZ-sLOzBKtfHp_ph0SEEhhEI@api.cloudinary.com/v1_1/<ddhobdqkx>/resources/image'

@@ -25,7 +25,7 @@ export const QUERY_TRIPS = gql`
     trip {
       _id
       # tripText
-      user
+      username
       summary
       location
       price
@@ -39,6 +39,9 @@ export const QUERY_SINGLE_TRIP = gql`
   query Query($_id: ID!) {
     getTripById(_id: $_id) {
       _id
+      # tripText
+      username
+      summary
       location
       price
       rating
@@ -101,7 +104,7 @@ export const TRIP_SEARCH_QUERY = gql`
       trips {
         _id
         # tripText
-        user
+        username
         summary
         location
         price
@@ -125,16 +128,12 @@ export const FIND_TRIP = gql`
   query trip($tripsInput: TripsSearchFilter) {
     trip(input: $tripsInput) {
       _id
-      # tripText
-
       summary
       location
       price
       rating
-      user {
-        _id
-        username
-      }
+      image
+      username
       comments {
         _id
         commentText
