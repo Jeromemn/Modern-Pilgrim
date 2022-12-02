@@ -15,18 +15,24 @@ const SearchContainer = styled.div`
   padding-top: 1rem;
 `;
 
+// const FeedContainer = styled.div`
+// display: flexbox;
+// flex-wrap: wrap;
+
+// `;
+
 function Home() {
   return (
     <>
       <HomeHeader />
       <SearchContainer>{/* <Search /> */}</SearchContainer>
       <Navbar />
-      <div>
+      
         {/* <CardContainer> */}
 
         <FeedCont />
         {/* </CardContainer> */}
-      </div>
+      {/* </FeedContainer> */}
     </>
   );
 }

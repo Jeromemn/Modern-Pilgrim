@@ -19,10 +19,12 @@ const FilterContainer = styled.div`
 
 const TripsContainer = styled.div`
   display: flex;
+  flex-direction: row;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 5rem;
   list-style-type: none;
+  flex-wrap: wrap;
 `;
 
 //  testing

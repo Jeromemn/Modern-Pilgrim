@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-
+import Button from "../components/Buttons/Button"
 
 const UploadWidget = ({onUpload}) => {
 const cloudinaryRef = useRef();
@@ -21,8 +21,11 @@ useEffect(() => {
 }, [])
 
 return (
-    <button onClick={() => widgetRef.current.open()}> 
-    Upload Photo</button>
+    <Button onClick={(e) => { 
+        e.preventDefault();
+        widgetRef.current.open()
+        }} variant='secondary' > 
+    Upload Photo</Button>
 )
 }
 
