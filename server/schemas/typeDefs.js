@@ -32,14 +32,14 @@ const typeDefs = gql`
     # offet
     # limit
   }
-  #  ask about this 
+  #  ask about this
   # type TripInput {
   #   filter: TripsSearchFilter
   # }
   # end added
   type Query {
-    getTrip: [Trip]
-    # getTrip(_id: ID): Trip
+    getTrips: [Trip]
+    getTripById(_id: ID!): Trip
     getComments: [Comment]
     getUser(_id: ID): User
     searchTrip(value: String): [Trip]

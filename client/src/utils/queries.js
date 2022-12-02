@@ -36,16 +36,16 @@ export const QUERY_TRIPS = gql`
 `;
 
 export const QUERY_SINGLE_TRIP = gql`
-  query getSingleTrip($tripId: ID!) {
-    getSingletrip(tripId: $tripId) {
+  query Query($_id: ID!) {
+    getTripById(_id: $_id) {
       _id
-      # tripText
-      user
-      summary
       location
       price
       rating
-
+      summary
+      user {
+        _id
+      }
       comments {
         _id
         commentText
