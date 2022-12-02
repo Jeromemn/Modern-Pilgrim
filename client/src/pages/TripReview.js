@@ -109,20 +109,10 @@ const Review = () => {
 
 export default Review;
 
-const cld = new Cloudinary({
-  cloud: {
-    cloudName: "ddhobdqkx",
-    apiKey: "232238398692322",
-    apiSecret: "oRkkZ-sLOzBKtfHp_ph0SEEhhEI",
-  },
-});
-const headerImage = cld.video("headerEdit");
-console.log(headerImage);
 
 const PageContainer = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
-  /* background-color: #C2C2C1; */
 `;
 
 const Container1 = styled.div`
@@ -130,7 +120,6 @@ const Container1 = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  /* padding:.5rem; */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
