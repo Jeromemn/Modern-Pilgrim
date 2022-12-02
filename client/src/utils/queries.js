@@ -56,21 +56,20 @@ export const QUERY_SINGLE_TRIP = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+  query me($username: String) {
+    me(username: $username) {
       _id
       username
       email
       bio
-      trips {
+      trip {
         _id
         # tripText
-        user
         summary
         location
         price
         rating
-        comments
+
       }
     }
   }

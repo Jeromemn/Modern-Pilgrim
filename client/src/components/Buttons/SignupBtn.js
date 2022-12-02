@@ -6,7 +6,6 @@ function SignupBtn() {
     const { logout } = useAuth0();
   return (
     <button
-    className="btn btn-primary btn-block"
     onClick={() =>
         loginWithRedirect({
         screen_hint: 'signup',
