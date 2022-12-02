@@ -44,14 +44,15 @@ const typeDefs = gql`
   # }
   # end added
   type Query {
-    getTrip: [Trip]
-    # getTrip(_id: ID): Trip
+    getTrips: [Trip]
+    getTripById(_id: ID!): Trip
     getComments: [Comment]
     getUser(_id: ID): User
     searchTrip(value: String): [Trip]
     getPrices(search: Float): Trip
     getRating(search: Int): Trip
     trip(input: TripsSearchFilter): [Trip]
+    me(username: String): User
     # 
     # image(String!): [Trip]
     # uploads: [File]

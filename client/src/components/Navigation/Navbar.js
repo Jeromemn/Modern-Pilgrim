@@ -1,41 +1,44 @@
 import { Link } from "react-router-dom";
+import LoginBtn from "../Buttons/LoginBtn"
+import LogoutBtn from "../Buttons/LogoutBtn";
+import SignupBtn from "../Buttons/SignupBtn";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 export default function NavTabs() {
   return (
     <>
-      <ul>
-        <li>
-          <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link>
-          My Profile
-        </li>
+    <Navbar bg="light" variant="light">
+    <Container>
+    <Nav className="me-auto">
+        <Nav.Link to='/profile'>
+          My Profile</Nav.Link>
+          
 
-        {/* // href='#My-profile' onClick={() => handlePageChange('MyProfile')} */}
+        <Nav.Link to='/Review'>
+          Submit a Voyage</Nav.Link>
+      
 
-        <li>
-            <Link to='/Review'></Link>
-         {/* href="#Submit" onClick={() => handlePageChange("MyProfile")}> */}
-          Submit a Voyage
-        </li>
+          <Nav.Link to='/'>
+          Explore</Nav.Link>
 
-        <li>
-        <Link to='/'></Link>
-        {/* // href="#Explore" onClick={() => handlePageChange("Explore")}> */}
-          Explore
-        </li>
 
-        <li>
-            <Link to='/login'></Link>
-        {/* // href="#Login" onClick={() => handlePageChange("Login")}> */}
-          Sign in
-        </li>
+        <Nav>
+        <LoginBtn/>
+        </Nav>
 
-        <li>
-            <Link to='/signup'></Link>
+        <Nav>
+        <SignupBtn/>
+        </Nav>
         
-        {/* href="#Join" onClick={() => handlePageChange("Join")}> */}
-          Sign up
-        </li>
-      </ul>
+        <Nav>
+          <LogoutBtn/>
+        </Nav>
+      </Nav>
+      </Container>
+    </Navbar>
     </>
   );
 }
+

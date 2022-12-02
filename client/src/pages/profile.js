@@ -1,44 +1,55 @@
 //current user and other users
 import React from "react";
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
 import { QUERY_ME, QUERY_SINGLE_PROFILE } from "../utils/queries";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import LoginBtn from "../components/Buttons/LoginBtn";
+import SignupBtn from "../components/Buttons/SignupBtn";
 
 const Profile = () => {
-const { profileId } = useParams();
-const { user, isAuthenticated, isLoading } = useAuth0();
-const { data } = useQuery(
-    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
+const { profile } = useParams();
+const { username, user: authUser, isAuthenticated, isLoading } = useAuth0();
+console.log(authUser);
+const data = useQuery(
+    profile ? QUERY_SINGLE_PROFILE : QUERY_ME,
     {
-        variables: { profileId: profileId },
+        variables: { username: profile || authUser?.nickname },
     }
 );
+console.log(data)
+const user = data?.user || data?.authUser || {};
+console.log(user)
 
-const profile = data?.me || data?.profile || {};
+if (isAuthenticated && profile === username) {
+    return (
+        (
+        <div>
+            {/* <img src={username.picture} alt={username.name} />
+            <h2>{username.name}</h2>
+            <p>{username.email}</p> */}
+            <p>User {user.username}</p> 
+        </div>
+        )
+        );
+    }
 
 if (isLoading) {
     return <div>Loading ...</div>;
 }
 
-if (!profile?.name) {
+if (!user?.username) {
     return (
     <h4>
         You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        links below to sign up or log in!
+        <br></br>
+    <LoginBtn/> <SignupBtn/>
     </h4>
     );
 }
 
-return (
-    isAuthenticated && (
-    <div>
-        <img src={username.picture} alt={username.name} />
-        <h2>{username.name}</h2>
-        <p>{username.email}</p>
-    </div>
-    )
-    );
 };
 
 export default Profile;
+

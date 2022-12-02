@@ -36,8 +36,8 @@ export const QUERY_TRIPS = gql`
 `;
 
 export const QUERY_SINGLE_TRIP = gql`
-  query getSingleTrip($tripId: ID!) {
-    getSingletrip(tripId: $tripId) {
+  query Query($_id: ID!) {
+    getTripById(_id: $_id) {
       _id
       # tripText
       username
@@ -45,7 +45,10 @@ export const QUERY_SINGLE_TRIP = gql`
       location
       price
       rating
-
+      summary
+      user {
+        _id
+      }
       comments {
         _id
         commentText
@@ -56,21 +59,20 @@ export const QUERY_SINGLE_TRIP = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+  query me($username: String) {
+    me(username: $username) {
       _id
       username
       email
       bio
-      trips {
+      trip {
         _id
         # tripText
-        user
         summary
         location
         price
         rating
-        comments
+
       }
     }
   }
