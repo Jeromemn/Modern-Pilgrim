@@ -19,8 +19,10 @@ const Trip = () => {
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  const { location, summary, price, rating, comments, user } = data.getTripById;
-  console.log(location, summary, price, rating, comments, user);
+  console.log(data);
+  const { location, summary, price, rating, comments, username } =
+    data.getTripById;
+  console.log(location, summary, price, rating, comments, username);
   return (
     <>
       {data ? (
@@ -76,7 +78,7 @@ const Trip = () => {
                     }}
                   >
                     {location}{" "}
-                    <Button variant="outline-success">{user._id}</Button>
+                    <Button variant="outline-success">{username}</Button>
                   </Card.Title>
                   <br />
                   <Card.Text
