@@ -2,40 +2,43 @@ import { Link } from "react-router-dom";
 import LoginBtn from "../Buttons/LoginBtn"
 import LogoutBtn from "../Buttons/LogoutBtn";
 import SignupBtn from "../Buttons/SignupBtn";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 export default function NavTabs() {
   return (
     <>
-      <ul>
-        <li>
-      <Link to='/profile'>
-          My Profile</Link>
-        
-        </li>
+    <Navbar bg="light" variant="light">
+    <Container>
+    <Nav className="me-auto">
+        <Nav.Link to='/profile'>
+          My Profile</Nav.Link>
+          
 
-        <li>
-            <Link to='/Review'>
-          Submit a Voyage</Link>
-        </li>
+        <Nav.Link to='/Review'>
+          Submit a Voyage</Nav.Link>
+      
 
-        <li>
-        <Link to='/'>
-          Explore</Link>
+          <Nav.Link to='/'>
+          Explore</Nav.Link>
 
-        </li>
 
-        <li>
+        <Nav>
         <LoginBtn/>
-        </li>
+        </Nav>
 
-        <li>
+        <Nav>
         <SignupBtn/>
-        </li>
+        </Nav>
         
-        <li>
+        <Nav>
           <LogoutBtn/>
-        </li>
-      </ul>
+        </Nav>
+      </Nav>
+      </Container>
+    </Navbar>
     </>
   );
 }
+
