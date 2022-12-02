@@ -8,22 +8,20 @@ export default function NavTabs() {
     <>
       <ul>
         <li>
-          {/* <Link to="/myProfile"> ${Auth.getProfile().data.username} </Link> */}
-          My Profile
-        </li>
-
-        {/* // href='#My-profile' onClick={() => handlePageChange('MyProfile')} */}
-
-        <li>
-            <Link to='/Review'></Link>
-         {/* href="#Submit" onClick={() => handlePageChange("MyProfile")}> */}
-          Submit a Voyage
+      <Link to='/profile'>
+          My Profile</Link>
+        
         </li>
 
         <li>
-        <Link to='/'></Link>
-        {/* // href="#Explore" onClick={() => handlePageChange("Explore")}> */}
-          Explore
+            <Link to='/Review'>
+          Submit a Voyage</Link>
+        </li>
+
+        <li>
+        <Link to='/'>
+          Explore</Link>
+
         </li>
 
         <li>
@@ -31,7 +29,7 @@ export default function NavTabs() {
         </li>
 
         <li>
-       <SignupBtn/>
+        <SignupBtn/>
         </li>
         
         <li>

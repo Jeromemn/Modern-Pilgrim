@@ -16,6 +16,9 @@ const resolvers = {
     getUser: async (parent, { _id }) => {
       return await User.findById(_id);
     },
+    me: async (parent, { username }) => {
+    return await User.findOne({username});
+    },
     searchTrip: async (parent, { value }) => {
       return await Trip.find({ location: `${value}` }).exec();
     },

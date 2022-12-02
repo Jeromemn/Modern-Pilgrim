@@ -46,6 +46,7 @@ const typeDefs = gql`
     getPrices(search: Float): Trip
     getRating(search: Int): Trip
     trip(input: TripsSearchFilter): [Trip]
+    me(username: String): User
   }
   type Mutation {
     addUser(username: String!, email: String!, bio: String): User
